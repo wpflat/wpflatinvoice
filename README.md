@@ -1,6 +1,8 @@
 # WPFlat Invoice
 
-Send invoices, get paid and bill on repeat, without the rest of a finance system. For the WPFlat suite; needs WPFlat Core.
+**Invoicing, simply.** Send a professional invoice in minutes, see who has paid, and let repeat clients bill themselves. No accounting jargon, no bloated finance system, just invoices that get you paid. Runs inside your WordPress, on your own data.
+
+Part of the WPFlat suite; needs WPFlat Core.
 
 - **Invoices:** line items, tax, discount, instalments, currencies, numbering, a public invoice page, emailed invoices with To and CC to the right contacts, reminders and thank-you emails.
 - **Payments:** record full or part payments; invoices move between draft, sent, partly paid, paid and overdue on their own.
