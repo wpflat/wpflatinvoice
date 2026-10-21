@@ -19,6 +19,7 @@ sdk.registerFormatter( 'money', ( amount, currency ) => fmtMoney( amount, curren
 /** A route screen that shows one section of the invoicing pages. */
 const page = ( section, sub = '' ) => ( { props: [ 'sub', 'section', 'query' ], render() { return h( Invoicing, { section: this.section || section, sub: this.sub || sub, query: this.query } ); } } );
 
+sdk.registerQuickAdd?.( M, [ { label: 'New invoice', route: '/billing/invoices/new' } ] );
 sdk.registerRoute( { path: '/billing', module: M, component: page( 'billing' ) } );
 sdk.registerRoute( { path: '/billing/:sub', module: M, component: page( 'billing' ) } ); // invoices, recurring, one-off
 sdk.registerRoute( { path: '/billing/invoices/:id', module: M, component: InvoiceEditor } ); // "new" opens a blank one

@@ -1,6 +1,6 @@
 {
   "name": "wpflatinvoice",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "description": "Invoices, payments, a catalog and recurring billing with emailed invoices, for the WPFlat suite.",
