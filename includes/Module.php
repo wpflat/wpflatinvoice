@@ -62,7 +62,7 @@ class Module {
 				'public_paths'  => array( 'invoice' ),
 				'public_params' => array( 'bd_invoice' ),
 				'roles'         => array(
-					'wpflat_invoice_team' => array( 'label' => 'WPFlat Invoice Team', 'desc' => 'Creates and sends invoices, records payments and manages recurring billing.', 'caps' => array( 'wpflatinvoice_billing' ) ),
+					'wpflat_invoice_team' => array( 'label' => 'Invoice Team', 'desc' => 'Creates and sends invoices, records payments and manages recurring billing.', 'caps' => array( 'wpflatinvoice_billing' ) ),
 				),
 				'client_manager_caps' => array( 'wpflatinvoice_billing' ),
 				'manager_grants'      => array(
