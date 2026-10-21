@@ -1,0 +1,42 @@
+name: Release
+
+# Push a tag like v0.1.0 (it must match the "Version:" line in wpflatinvoice.php) and this attaches an installable zip to a GitHub release.
+on:
+  push:
+    tags: [ 'v*' ]
+
+permissions:
+  contents: write
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: wpflatinvoice
+
+      - name: Check the tag matches the plugin version
+        run: |
+          V=$(grep -m1 '^ \* Version:' wpflatinvoice/wpflatinvoice.php | awk '{print $3}')
+          if [ "v$V" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match Version: $V in wpflatinvoice.php" >&2
+            exit 1
+          fi
+          echo "VERSION=$V" >> "$GITHUB_ENV"
+
+      - name: Build the zip (the plugin folder, without development files)
+        run: |
+          zip -rq "wpflatinvoice-$VERSION.zip" wpflatinvoice \
+            -x "wpflatinvoice/.git/*" "wpflatinvoice/.github/*" "wpflatinvoice/.gitignore" "wpflatinvoice/ui/*" "wpflatinvoice/vite*.js" "wpflatinvoice/package*.json" "wpflatinvoice/API.md" \
+               "wpflatinvoice/node_modules/*" "wpflatinvoice/lib/dompdf/tests/*" '*.DS_Store'
+          cp "wpflatinvoice-$VERSION.zip" wpflatinvoice.zip   # a stable name, so .../releases/latest/download/wpflatinvoice.zip always works
+          unzip -l wpflatinvoice.zip | tail -1
+
+      - name: Publish the release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            wpflatinvoice-${{ env.VERSION }}.zip
+            wpflatinvoice.zip
+          generate_release_notes: true
