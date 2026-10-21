@@ -21,6 +21,7 @@ class Module {
 		add_action( 'wpflatcore_daily', array( __CLASS__, 'daily' ), 10 );
 		Integrations::init();
 		Notify::init();
+		Services\Reminders::init();
 		Demo::init();
 		if ( Registry::enabled( 'invoice' ) || ! did_action( 'wpflatcore_ready' ) ) {
 			Public_Invoice::init();

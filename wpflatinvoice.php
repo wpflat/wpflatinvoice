@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WPFlat Invoice
  * Description: Invoices, payments, a catalog and recurring billing for your clients, with emailed invoices and a public invoice page. Needs WPFlat Core. Move to WPFlat Finance later and your invoices come with you.
- * Version: 0.1.2
+ * Version: 0.2.0
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Digitalzooks
@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'WPFLATINVOICE_VERSION', '0.1.2' );
+define( 'WPFLATINVOICE_VERSION', '0.2.0' );
 define( 'WPFLATINVOICE_FILE', __FILE__ );
 define( 'WPFLATINVOICE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WPFLATINVOICE_URL', plugin_dir_url( __FILE__ ) );

@@ -4,7 +4,7 @@
 
 Part of the WPFlat suite; needs WPFlat Core.
 
-- **Invoices:** line items, tax, discount, instalments, currencies, numbering, a public invoice page, emailed invoices with To and CC to the right contacts, reminders and thank-you emails.
+- **Invoices:** line items, tax, discount, instalments, currencies, numbering, a public invoice page, emailed invoices with To and CC to the right contacts, and payment reminders (before, on and after the due date, following instalments) to the same people.
 - **Payments:** record full or part payments; invoices move between draft, sent, partly paid, paid and overdue on their own.
 - **Catalog:** the services and products you sell, with prices.
 - **Recurring billing:** retainers, subscriptions, renewals and one-off charges that turn into invoices.
